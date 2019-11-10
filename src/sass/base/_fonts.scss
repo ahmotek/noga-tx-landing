@@ -1,5 +1,18 @@
 //- This file contains all @font-face declarations.
 @font-face {
-  font-family: OpenSans;
-  src: url($font-url + 'OpenSans-Regular.ttf');
+  font-family: 'Heebo';
+  font-weight: map-get($text-font-weight, normal);
+  src: url($font-url + 'Heebo/Heebo-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Heebo';
+  font-weight: map-get($text-font-weight, bold);
+  src: url($font-url + 'Heebo/Heebo-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Heebo';
+  font-weight: map-get($text-font-weight, extra-bold);
+  src: url($font-url + 'Heebo/Heebo-ExtraBold.ttf');
 }

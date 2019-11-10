@@ -1,0 +1,156 @@
+//- Under Construction specific styles
+body {
+  background: url($image-url + 'landing-background-flipped-optimised.jpg') no-repeat fixed left; 
+  background-size: cover;
+
+  @include respond-to(small) {
+    background: url($image-url + 'landing-background-flipped-optimised.jpg') no-repeat fixed 25%; 
+    background-size: cover;
+    padding-block-start: 50vh;
+  }
+
+  @include respond-to(medium) {
+    padding-block-start: 42.5vh;
+  }
+
+  @include respond-to(large) {
+    padding-block-start: 34vh;
+  }
+}
+
+.header {
+  color: $heading-color;
+  text-shadow: $text-shadow;
+
+  @include respond-to(small) {
+    margin-block-end: map-get($margin-block, 'small');
+  }
+
+  @include respond-to(medium) {
+    margin-block-end: map-get($margin-block, 'medium');
+  }
+
+  @include respond-to(large) {
+    margin-block-end: map-get($margin-block, 'large');
+  }
+
+  &__title {
+    font-weight: map-get($text-font-weight, extra-bold);
+
+    @include respond-to(large) {
+      font-size: map-get($heading-1-size, large);      
+    }
+
+    @include respond-to(medium) {
+      font-size: map-get($heading-1-size, large);      
+    }
+  }
+
+  &__subtitle {
+    @include respond-to(large) {
+      font-size: map-get($heading-2-size, large);
+    }
+
+    @include respond-to(medium) {
+      font-size: map-get($heading-2-size, large);
+    }
+  }
+}
+
+.layout {
+  @include respond-to(small) {
+    margin-inline-start: map-get($margin-inline, small);
+    margin-inline-end: map-get($margin-inline, small);
+  }
+  
+  @include respond-to(medium) {
+    margin-inline-start: map-get($margin-inline, medium);
+    margin-inline-end: map-get($margin-inline, medium);
+  }
+  
+  @include respond-to(large) {
+    @include column-width(map-get($column-width, large));
+    @include landing-inline-margins(map-get($margin-inline, large))
+  }
+}
+
+.main {
+  background-color: $secondary-background; 
+
+  @include respond-to(small) {
+    padding-block-start: map-get($margin-block, 'small');
+    padding-block-end: map-get($margin-block, 'small');
+  }
+
+  @include respond-to(medium) {
+    padding-block-start: map-get($margin-block, 'medium');
+    padding-block-end: map-get($margin-block, 'medium');
+  }
+
+  @include respond-to(large) {
+    padding-block-start: map-get($margin-block, 'large');
+    padding-block-end: map-get($margin-block, 'large');
+  }
+}
+
+.footer {
+  text-align: center;
+
+  @include respond-to(small) {
+    padding-inline-start: map-get($margin-inline, small);
+    padding-inline-end: map-get($margin-inline, small);
+    padding-block-start: map-get($margin-block, 'small');
+    padding-block-end: map-get($margin-block, 'small');
+    background-color: $mid-grey;
+  }
+  
+  @include respond-to(medium) {
+    padding-inline-start: map-get($margin-inline, medium);
+    padding-inline-end: map-get($margin-inline, medium);
+    padding-block-start: map-get($margin-block, 'medium');
+    padding-block-end: map-get($margin-block, 'medium');
+    background-color: $mid-grey;
+  }
+  
+  @include respond-to(large) {
+    position: fixed;
+    bottom: map-get($margin-block, 'large');
+    left: map-get($margin-inline, large);
+    max-width: 34vw;
+  }
+
+  &__mail {
+    display: block;
+    margin-block-start: $flow-space / 2;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding-block-start: $flow-space / 2;
+    padding-block-end: $flow-space / 2;
+    text-align: center;
+    background-color: $button-background;
+    color: $light-grey;
+    border-radius: $default-radius;
+
+    @include respond-to(medium) {
+      max-width: 34vw;
+    }
+
+    @include respond-to(large) {
+      max-width: 34vw;
+    }
+
+    @include on-event {
+      color: $anchor-color-hover;
+      background-color: $button-background-hover;
+      text-decoration: none;
+
+      @include respond-to(small) {
+        color: $anchor-color-hover-negative;
+      }
+      
+      @include respond-to(medium) {
+        color: $anchor-color-hover-negative;
+      }
+    }
+  }
+}

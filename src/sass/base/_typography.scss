@@ -1,27 +1,46 @@
 //- Basic typography style
-
 body {
   color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack; //- 62.5% makes 'em' unit computed as 10px; 125% makes 'em' units computed as 20px;
+  font: map-get($text-font-weight, normal) 62.5% / #{map-get($text-font-height, generic)} $text-font-stack; //- 62.5% makes 'em' unit computed as 10px; 125% makes 'em' units computed as 20px;
 }
 
-//- TBD Headings, Parragraphs
+//- Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: map-get($text-font-weight, bold);
+  line-height: map-get($text-font-height, heading);
+}
+
 h1 {
   @include respond-to('small') {
-    font-size: map-get($heading-font-1--map, small);
+    font-size: map-get($heading-1-size, small);
   }
 
   @include respond-to('medium') {
-    font-size: map-get($heading-font-1--map, medium);
+    font-size: map-get($heading-1-size, medium);
   }
 
   @include respond-to('large') {
-    font-size: map-get($heading-font-1--map, large);
+    font-size: map-get($heading-1-size, large);
   }
 }
 
 h2 {
-  font-size: $heading-font-2;
+  @include respond-to('small') {
+    font-size: map-get($heading-2-size, small);
+  }
+
+  @include respond-to('medium') {
+    font-size: map-get($heading-2-size, medium);
+  }
+
+  @include respond-to('large') {
+    font-size: map-get($heading-2-size, large);    
+  }
 }
 
 h3 {
@@ -42,14 +61,14 @@ h6 {
 
 p {
   @include respond-to(small) {
-    font-size: map-get($parragraph--map, small)
+    font-size: map-get($parragraph, small)
   }
 
   @include respond-to(medium) {
-    font-size: map-get($parragraph--map, medium)
+    font-size: map-get($parragraph, medium)
   }
 
   @include respond-to(large) {
-    font-size: map-get($parragraph--map, large)
+    font-size: map-get($parragraph, large)
   }
 }

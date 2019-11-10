@@ -1,6 +1,8 @@
 //- CSS helper classes
 
-//- Clear inner floats
+/**
+ * Clear inner floats
+ */
 .clearfix::after {
   content: '';
   clear: both;
@@ -33,3 +35,10 @@
   position: absolute;
   width: 1px;
 }
+
+/**
+ * invert direction when text block is left-to-right
+ */
+ .ltr {
+   direction: $secondary-direction;
+ }
