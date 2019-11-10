@@ -2,23 +2,37 @@
 
 //- Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font-stack: 'Heebo', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font-weight: (
+  normal: 400,
+  bold: 500,
+  extra-bold: 700
+);
+
+$text-font-height: (
+  generic: 1.6,
+  heading: 1.4
+);
+
 
 //- Set heading font-size
-$heading-font-1: 2.25em;
-$heading-font-1--map : (
-  small: .8em,
-  medium: 2em,
-  large: 2.25em
-); 
-$heading-font-2: 2em;
+$heading-1-size : (
+  small: 4em,
+  medium: 6em,
+  large: 8em
+);
+$heading-2-size: (
+  small: 2.5em,
+  medium: 3em,
+  large: 3.4em
+);
 $heading-font-3: 1.75em;
 $heading-font-4: 1.5em;
 $heading-font-5: 1.25em;
 $heading-font-6: 1em;
 
-$parragraph--map: (
-  small: .6em,
-  medium: 1em,
-  large: 1.75em
+$parragraph: (
+  small: 1.8em,
+  medium: 2em,
+  large: 2em
 );

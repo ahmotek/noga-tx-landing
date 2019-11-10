@@ -12,7 +12,7 @@ body {
  * Basic link styles
  */
 a {
-  color: $main-color;
+  color: $anchor-color;
   text-decoration: none; 
 
   &:not([class]) {
@@ -22,6 +22,10 @@ a {
   @include on-event {
     color: $text-color;
     text-decoration: underline;
+  }
+
+  @include media-hover {
+    cursor: pointer; 
   }
 }
 

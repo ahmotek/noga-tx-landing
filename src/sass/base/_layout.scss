@@ -7,21 +7,20 @@
  * 3. Leave some space on the edges, especially valuable on small screens
  */
 .main {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $flow-space * 2;
-  padding-right: $flow-space * 2;
+  // width: 100%;
+  // margin-inline-start: auto;
+  // margin-inline-end: auto;
+  // padding: $flow-space * 2;
 
-  @include respond-to(small) {
-    max-width: map-get($max-width, small);
-  }
+  // @include respond-to(small) {
+  //   max-width: map-get($max-width, small);
+  // }
 
-  @include respond-to(medium) {
-    max-width: map-get($max-width, medium);
-  }
+  // @include respond-to(medium) {
+  //   max-width: map-get($max-width, medium);
+  // }
 
-  @include respond-to(large) {
-    max-width: map-get($max-width, large);
-  }
+  // @include respond-to(large) {
+  //   max-width: map-get($max-width, large);
+  // }
 }

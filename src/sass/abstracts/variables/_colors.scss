@@ -1,10 +1,19 @@
 //- Color variables
 
 /// @type Color
+$white: rgb(255,255,255) !default;
 $light-grey: rgb(245, 245, 245) !default;
-$mid-grey: rgb(153, 153, 153) !default;
-$dark-grey: rgb(68, 68, 68) !default;
+$mid-grey: rgb(224, 224, 224) !default;
+$dark-grey: rgb(57, 62, 66) !default;
 
-$text-color: rgb(65, 71, 75) !default;
-$main-color: rgb(204, 102, 102) !default;
-$secondary-color: $light-grey;
+$heading-color: $light-grey !default;
+$text-color: $dark-grey !default;
+$anchor-color: $text-color !default;
+$anchor-color-hover: $light-grey !default;
+$anchor-color-hover-negative: rgba($light-grey, .5) !default;
+$primary-background: $white !default;
+$secondary-background: $light-grey !default;
+$button-background: rgb(191, 25, 55) !default;
+$button-background-hover: darken($button-background, 5%) !default;
+
+$text-shadow: 0 0 1em $text-color;
