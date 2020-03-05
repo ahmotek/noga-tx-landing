@@ -1,4 +1,4 @@
 //- Group Mixins import
-@import 'mixins/media-queries',
-        'mixins/events',
-        'mixins/layout'; 
+@import 'mixins/components/buttons',
+        'mixins/base/event-wrapper',
+        'mixins/ui/fluid-type'; 

@@ -1,0 +1,13 @@
+@mixin button-background($background, $background-hover, $animation: true) {
+  background-color: $background;
+
+  &:hover {
+    @include media("hover") {
+      background-color: $background-hover;
+    }
+  }
+
+  @if $animation {
+    transition: background-color 200ms ease-in-out;
+  }
+}

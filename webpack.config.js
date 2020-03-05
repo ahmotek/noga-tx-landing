@@ -3,6 +3,8 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const projectRoot = path.resolve(__dirname, 'dist');
+
 /*
  * SplitChunksPlugin is enabled by default and replaced
  * deprecated CommonsChunkPlugin. It automatically identifies modules which
@@ -16,7 +18,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
  *
  */
 
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /*
  * We've enabled HtmlWebpackPlugin for you! This generates a html
@@ -27,6 +29,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
  *
  */
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 module.exports = {
   mode: 'development',
 
@@ -34,14 +38,21 @@ module.exports = {
   entry: './src/js/app.js',
 
   output: {
-    filename: 'app.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name].bundle.js',
+    path: projectRoot
+  },
+
+  watch: true,
+
+  watchOptions: {
+    ignored: /node_modules/
   },
 
   module: {
     rules: [
       {
         test: /.(js|jsx)$/,
+        exclude: /(node_modules)/,
         include: [path.resolve(__dirname, 'src')],
         loader: 'babel-loader',
 
@@ -57,6 +68,10 @@ module.exports = {
             ]
           ]
         }
+      },
+      {
+        "test": /.(dist\/assets\/images|dist\/assets\/videos)$/,
+        "use": "file-loader"
       },
       {
         // Apply rule for .sass, .scss or .css files
@@ -89,24 +104,47 @@ module.exports = {
           }
         ]
       },
-      // {
-      //   test: /\.css$/i,
-      //   use: ['style-loader', 'css-loader'],
-      // },
-      // {
-      //   test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
-      //   loader: 'url-loader',
-      //   options: {
-      //     limit: 8192,
-      //   },
-      // },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
+        test: /\.html$/,
+        use: {
+          loader: "html-loader",
+          options: {
+            attrs: [":src"]
+          }
+        }
+      },
+      {
+        test: /\.(mp4)$/i,
+        use: {
+          loader: "file-loader",
+          options: {
+            outputPath: 'assets/videos'
+          }
+        }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
         use: [
           {
             loader: "file-loader",
             options: {
+              esModule: false,
               outputPath: 'assets/images'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(svg)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              outputPath: 'assets/images/svg'
             }
           }
         ]
@@ -126,28 +164,32 @@ module.exports = {
   },
 
   plugins: [
-    // new webpack.ProgressPlugin(), 
-    // new HtmlWebpackPlugin(),
+    new CleanWebpackPlugin(),
+    // new HtmlWebpackPlugin(), // Generates default index.html
+    // new HtmlWebpackPlugin({  // Also generate a test.html
+    //   filename: 'html/c-thumbnail.html',
+    //   template: 'src/html/c-thumbnail.html'
+    // }),,
     new MiniCssExtractPlugin({
-      filename: "[name].css"
+      filename: "main.css"
     })
   ],
 
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendors: {
-          priority: -10,
-          test: /[\\/]node_modules[\\/]/
-        }
-      },
+  // optimization: {
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       vendors: {
+  //         priority: -10,
+  //         test: /[\\/]node_modules[\\/]/
+  //       }
+  //     },
 
-      chunks: 'async',
-      minChunks: 1,
-      minSize: 30000,
-      name: true
-    }
-  },
+  //     chunks: 'async',
+  //     minChunks: 1,
+  //     minSize: 30000,
+  //     name: true
+  //   }
+  // },
 
   devServer: {
     open: true

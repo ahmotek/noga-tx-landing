@@ -2,11 +2,10 @@
 
 //- Regular font family
 /// @type List
-$text-font-stack: 'Heebo', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font-stack: 'Barlow', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 $text-font-weight: (
   normal: 400,
-  bold: 500,
-  extra-bold: 700
+  bold: 700
 );
 
 $text-font-height: (

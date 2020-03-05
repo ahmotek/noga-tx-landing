@@ -24,7 +24,11 @@ a {
     text-decoration: underline;
   }
 
-  @include media-hover {
+  @include media('>=350px', '<tablet', 'retina3x') {
+
+  }
+
+  @include media('hover') {
     cursor: pointer; 
   }
 }

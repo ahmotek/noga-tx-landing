@@ -1,18 +1,18 @@
 //- This file contains all @font-face declarations.
 @font-face {
-  font-family: 'Heebo';
+  font-family: 'Barlow';
   font-weight: map-get($text-font-weight, normal);
-  src: url($font-url + 'Heebo/Heebo-Regular.ttf');
+  src: url($font-url + 'Barlow/Barlow-Medium.ttf');
 }
 
-@font-face {
-  font-family: 'Heebo';
-  font-weight: map-get($text-font-weight, bold);
-  src: url($font-url + 'Heebo/Heebo-Medium.ttf');
-}
+// @font-face {
+//   font-family: 'Barlow';
+//   font-weight: map-get($text-font-weight, bold);
+//   src: url($font-url + 'Barlow/Barlow-Bold.ttf');
+// }
 
-@font-face {
-  font-family: 'Heebo';
-  font-weight: map-get($text-font-weight, extra-bold);
-  src: url($font-url + 'Heebo/Heebo-ExtraBold.ttf');
-}
+// @font-face {
+//   font-family: 'Barlow';
+//   font-weight: map-get($text-font-weight, bold);
+//   src: url($font-url + 'Barlow/Barlow-BoldItalic.ttf');
+// }

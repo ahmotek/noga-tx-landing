@@ -6,14 +6,19 @@ $light-grey: rgb(245, 245, 245) !default;
 $mid-grey: rgb(224, 224, 224) !default;
 $dark-grey: rgb(57, 62, 66) !default;
 
+$brand-color: rgb(10, 84, 157);
+
 $heading-color: $light-grey !default;
+
 $text-color: $dark-grey !default;
 $anchor-color: $text-color !default;
 $anchor-color-hover: $light-grey !default;
 $anchor-color-hover-negative: rgba($light-grey, .5) !default;
-$primary-background: $white !default;
+
+$primary-background: rgba(4, 34, 63, .5) !default;
 $secondary-background: $light-grey !default;
-$button-background: rgb(191, 25, 55) !default;
+$button-background: $brand-color !default;
 $button-background-hover: darken($button-background, 5%) !default;
 
-$text-shadow: 0 0 1em $text-color;
+$text-shadow: 0 0 10px $text-color;
+$heading-shadow: 0 0 10px $primary-background, 0 0 20px $primary-background, 0 0 30px $primary-background, 0 0 40px $primary-background;

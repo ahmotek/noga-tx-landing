@@ -16,29 +16,29 @@ h6 {
 }
 
 h1 {
-  @include respond-to('small') {
+  @include media('<=mobile') {
     font-size: map-get($heading-1-size, small);
   }
 
-  @include respond-to('medium') {
+  @include media('>mobile', '<=laptop') {
     font-size: map-get($heading-1-size, medium);
   }
 
-  @include respond-to('large') {
+  @include media('>laptop') {
     font-size: map-get($heading-1-size, large);
   }
 }
 
 h2 {
-  @include respond-to('small') {
+  @include media('<=mobile') {
     font-size: map-get($heading-2-size, small);
   }
 
-  @include respond-to('medium') {
+  @include media('>mobile', '<=laptop') {
     font-size: map-get($heading-2-size, medium);
   }
 
-  @include respond-to('large') {
+  @include media('>laptop') {
     font-size: map-get($heading-2-size, large);    
   }
 }
@@ -60,15 +60,15 @@ h6 {
 }
 
 p {
-  @include respond-to(small) {
+  @include media('<=mobile') {
     font-size: map-get($parragraph, small)
   }
 
-  @include respond-to(medium) {
+  @include media('>mobile', '<=laptop') {
     font-size: map-get($parragraph, medium)
   }
 
-  @include respond-to(large) {
+  @include media('>laptop') {
     font-size: map-get($parragraph, large)
   }
 }

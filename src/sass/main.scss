@@ -4,8 +4,9 @@
 @import 'abstracts/variables',
         'abstracts/functions',
         'abstracts/mixins',
-        'abstracts/placeholders';
-
+        'abstracts/placeholders',
+        'abstracts/vendors/include-media';  
+ 
 //- Vendors - eg: normalize
 @import 'vendors/normalize';
  
@@ -14,7 +15,7 @@
         'base/base',
         'base/fonts',
         'base/typography',
-        'base/helpers',
+        'base/helpers', 
         'base/layout'; 
 
 //- Layout areas

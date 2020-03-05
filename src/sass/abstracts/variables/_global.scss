@@ -6,21 +6,10 @@ $secondary-direction: ltr;
 /// @type String
 $base-url: '../assets/' !default;
 $image-url: '../assets/images/' !default;
+$video-url: '../assets/videos/' !default;
 $font-url: '../assets/fonts/' !default;
 
 //- Flow Sapce - https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/
 $flow-space: 1em;
 
-$default-radius: 3px;
-
-$margin-inline: (
-  large: 10vw,
-  medium: 10vw,
-  small: 10vw
-);
-
-$margin-block: (
-  large: 5em,
-  medium: 4em,
-  small: 3em
-);
+$default-radius: 2px;
